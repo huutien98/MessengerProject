@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/chatbackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatDetailActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_above="@+id/linear"
+        android:id="@+id/chatRecyclerView"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:background="@drawable/bg_et_mesage"
+            android:hint="Enter your message"
+            android:ems="16"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/ic_send"
+            android:layout_width="55dp"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_back"
+                android:layout_width="35dp"
+                android:layout_height="45dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ic_avatar"
+                android:padding="5dp"
+                android:src="@drawable/ic_avatar_girl"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ic_back"
+                android:layout_width="55dp"
+                android:layout_height="55dp"/>
+            <TextView
+                android:id="@+id/userNameChat"
+                android:layout_marginLeft="5dp"
+                android:textSize="18sp"
+                android:text="Neat Roots"
+                app:layout_constraintStart_toEndOf="@+id/ic_avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:layout_marginRight="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_video_call"
+                android:background="@drawable/ic_call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <ImageButton
+                android:layout_marginRight="10dp"
+                android:id="@+id/btn_video_call"
+                app:layout_constraintEnd_toStartOf="@+id/btn_end"
+                android:background="@drawable/ic_camera_call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <ImageButton
+                android:layout_marginRight="10dp"
+                android:id="@+id/btn_end"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/ic_more_setting"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+</RelativeLayout>
